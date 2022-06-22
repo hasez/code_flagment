@@ -26,6 +26,7 @@ function gdrive {
             ;;
     esac
     mac_path=${win_path/$search/$replace}
-    mac_path="$(echo "$mac_path" | sed 's/\\/\//g')"
+    # \ を / に置換
+    mac_path=${mac_path//\\//}
     open "$mac_path"
 }
